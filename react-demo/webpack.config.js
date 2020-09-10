@@ -66,14 +66,19 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|jpeg|svg)$/i,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 1024 * 100,
-                        name: 'media/[name].[ext]',
-                        esModule: false
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1024,
+                            name: 'media/[name].[ext]',
+                            esModule: false
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader'
                     }
-                }
+                ]
             }
         ]
     },
@@ -98,7 +103,7 @@ module.exports = {
     performance: {
         hints: 'warning'
     },
-    externals:{
-        echarts:"echarts"
+    externals: {
+        echarts: "echarts"
     }
 }

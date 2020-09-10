@@ -6,7 +6,7 @@ export default class index extends Component {
             <div>
                 <h1 onClick={()=>this.push('/button')}>home</h1>
                 <img src={require('@/assets/none_resource.png')} alt=""/>
-                {/* <img src={img} alt=""/> */}
+                <img src={require('@/assets/1.png')} alt=""/>
             </div>
         )
     }
